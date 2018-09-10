@@ -1,0 +1,15 @@
+<%- include layout/header %>
+<div class="container">
+  <div class="row">
+    <h2>Create Poll <small><a style="font-size:0.8em" href="/dashboard">[Dashboard]</a></small></h2>
+    <hr />
+    <form action="/store-poll" method="POST">
+    <div class="form-group">
+      <label for="poll">Poll Question</label>
+      <textarea id="poll" class="form-control" name="question" placeholder="Enter poll question here..."></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+  </div>
+</div>
+<%- include layout/footer %>

@@ -1,0 +1,40 @@
+<%- include layout/header %>
+<div class="container">
+  <div class="row">
+    <h2>Polls <small><a style="font-size:0.8em" href="/dashboard">[Dashboard]</a> <a style="font-size:0.8em" href="/create-poll">[Create Poll]</a></small></h2>
+    <hr />
+
+    <div class="card" style="padding: 10px;">
+      <div class="card-body">
+        <h3><%= poll.question %></h3>
+        <div style="margin-left: 20px;">
+          <form action="/login" method="POST">
+          <div class="radio">
+            <input type="radio" name="option"> Start their own startup
+          </div>
+
+          <div class="radio">
+            <input type="radio"  name="option"> Get a high paying job outside Nigeria
+          </div>
+
+          <div class="radio">
+            <input type="radio"  name="option"> Join politics
+          </div>
+
+          <div class="radio">
+            <input type="radio"  name="option"> Become freelancers
+          </div>
+          </form>
+
+        </div>
+        <%if (poll.user_id == _user.id) { %>
+        <div><a href="#" class="btn btn-primary">Edit Poll</a> <a href="/create-poll-options/<%= poll._id %>" class="btn btn-primary">Add Options</a></div>
+        <% } else {  %>
+          <div><a href="#" class="btn btn-primary">Submit Poll</a></div>
+       <% } %>
+      </div>
+    </div>
+
+  </div>
+</div>
+<%- include layout/footer %>

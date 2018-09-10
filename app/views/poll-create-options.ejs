@@ -1,0 +1,18 @@
+<%- include layout/header %>
+<div class="container">
+  <div class="row">
+    <h2>Add Poll Options <small><a style="font-size:0.8em" href="/dashboard">[Dashboard]</a></small></h2>
+    <hr />
+    <div>
+        <h3><%= poll.question %></h3>
+    </div>
+    <form action="/store-poll-options" method="POST">
+    <div class="form-group">
+      <label for="poll">Poll Options</label>
+      <textarea id="poll" class="form-control" name="question" placeholder="Enter poll option here..."></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Add option</button>
+    </form>
+  </div>
+</div>
+<%- include layout/footer %>
